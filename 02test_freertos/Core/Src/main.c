@@ -1,0 +1,382 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2025 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "cmsis_os.h"
+#include "adc.h"
+#include "dma.h"
+#include "rtc.h"
+#include "spi.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+#include "aht20.h"
+#include "ds1307.h"
+#include "w25qxx.h" 
+#include "DEV_Config.h"
+#include "Command.h"
+#include "GUI_Paint.h"
+#include "Button.h"
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
+/* USER CODE BEGIN PFP */
+TaskHandle_t StartTask_Handler;
+void start_task(void *pvParameters);
+TaskHandle_t ADC_Value_Handle;
+void ADC_Value(void *pvParameters);
+TaskHandle_t EPD_test_Handle;
+void EPD_test(void *pvParameters);
+TaskHandle_t EXP_test_Handle;
+void EXP_test(void *pvParameters);
+
+
+void Get_RTC_Time(void);
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_ADC1_Init();
+  MX_SPI1_Init();
+  MX_SPI2_Init();
+  MX_USART1_UART_Init();
+  MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
+  MX_RTC_Init();
+  /* USER CODE BEGIN 2 */
+	DWT_Init();
+	AHT20_Init();
+	W25QXX_Init();
+	HAL_GPIO_WritePin(BT_CDS_GPIO_Port,BT_CDS_Pin,GPIO_PIN_SET);
+	HAL_GPIO_WritePin(BT_BRTS_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(EN_CHK_VU_GPIO_Port,EN_CHK_VU_Pin,GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_SET);
+
+		
+  /* USER CODE END 2 */
+
+  /* Call init function for freertos objects (in freertos.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+//  osKernelStart();
+  /* We should never get here as control is now taken by the scheduler */
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+    xTaskCreate((TaskFunction_t )start_task,  
+                (const char*    )"start_task",
+                (uint16_t       )128,
+                (void*          )NULL,         
+                (UBaseType_t    )1,
+                (TaskHandle_t*  )&StartTask_Handler); 					
+    osKernelStart();
+  while (1)
+  {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Configure LSE Drive Capability
+  */
+  HAL_PWR_EnableBkUpAccess();
+  __HAL_RCC_LSEDRIVE_CONFIG(RCC_LSEDRIVE_LOW);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE|RCC_OSCILLATORTYPE_LSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_BYPASS;
+  RCC_OscInitStruct.LSEState = RCC_LSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 1;
+  RCC_OscInitStruct.PLL.PLLN = 20;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
+  RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+  RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* USER CODE BEGIN 4 */
+
+void start_task(void *pvParameters)
+{
+		printf("start_task Run \r\n");
+    taskENTER_CRITICAL();
+    xTaskCreate((TaskFunction_t )ADC_Value,             
+                (const char*    )"ADC_Value",           
+                (uint16_t       )128,        
+                (void*          )NULL,                  
+                (UBaseType_t    )2,        
+                (TaskHandle_t*  )&ADC_Value_Handle);  
+    xTaskCreate((TaskFunction_t )EXP_test,             
+                (const char*    )"EXP_test",           
+                (uint16_t       )128,        
+                (void*          )NULL,                  
+                (UBaseType_t    )2,        
+                (TaskHandle_t*  )&EXP_test_Handle);  
+    xTaskCreate((TaskFunction_t )ButtonTask,             
+                (const char*    )"ButtonTask",           
+                (uint16_t       )128,        
+                (void*          )NULL,                  
+                (UBaseType_t    )2,
+									NULL
+                );
+    xTaskCreate((TaskFunction_t )EPD_test,             
+                (const char*    )"EPD_test",           
+                (uint16_t       )128,        
+                (void*          )&EPD_test_Handle,                  
+                (UBaseType_t    )2,
+									NULL
+                ); 
+								taskEXIT_CRITICAL();
+				vTaskDelete(StartTask_Handler);
+}
+
+void ADC_Value(void *pvParameters)
+{
+		uint16_t cont = 0;
+		uint16_t ADC_Value;
+	while(1)
+	{
+		HAL_ADC_Start(&hadc1);
+	  HAL_ADC_PollForConversion(&hadc1,50);
+	  if(HAL_IS_BIT_SET(HAL_ADC_GetState(&hadc1), HAL_ADC_STATE_REG_EOC))
+	  {
+			ADC_Value = HAL_ADC_GetValue(&hadc1);
+	  }
+		printf(" AD1 value = %1.3fV \r\n", ADC_Value*2.45f/4096*2);
+		vTaskDelay(pdMS_TO_TICKS(1000));
+		cont++;
+		if(cont==5)
+		{
+			HAL_GPIO_WritePin(EN_CHK_VU_GPIO_Port,EN_CHK_VU_Pin,GPIO_PIN_RESET);
+		}
+		else if(cont ==10)
+		{
+			cont = 0;
+			HAL_GPIO_WritePin(EN_CHK_VU_GPIO_Port,EN_CHK_VU_Pin,GPIO_PIN_SET);
+		}
+		HAL_ADC_Stop(&hadc1);
+	}
+}
+
+void EPD_test(void *pvParameters)
+{
+	DEV_Module_Init();
+	EPD_4IN2_V2_Init();
+	EPD_4IN2_V2_Clear();
+	vTaskDelay(pdMS_TO_TICKS(1000));
+	uint8_t *BlackImage;
+	BlackImage = mymalloc(SRAMIN, ((EPD_4IN2_V2_WIDTH % 8 == 0) ? (EPD_4IN2_V2_WIDTH / 8) : (EPD_4IN2_V2_WIDTH / 8 + 1)) * EPD_4IN2_V2_HEIGHT);
+	if (BlackImage == NULL)
+	{
+			printf("Failed to apply for black memory...\r\n");
+	}	
+	
+	Paint_NewImage(BlackImage, EPD_4IN2_V2_WIDTH, EPD_4IN2_V2_HEIGHT, 0, EPD_WHITE);
+	Paint_SelectImage(BlackImage);
+	Paint_Clear(EPD_WHITE);
+	Paint_Show_Str(120,130,"Hello STM32 !!!",24,1,0);
+	EPD_4IN2_V2_Display(BlackImage);
+	myfree(SRAMIN,BlackImage);
+	vTaskDelete(EPD_test_Handle);
+}
+
+void EXP_test(void *pvParameters)
+{
+		AHT20_Data aht20_data;
+	while(1)
+	{
+		vTaskDelay(pdMS_TO_TICKS(1000));
+//	W25QXX_Write(char1,0x0000,sizeof(char1));
+		uint8_t *char2;
+		char2 = mymalloc(SRAMIN, 128);
+		W25QXX_Read(char2,0x0000,128);
+		printf("%s",char2);
+		AHT20_ReadData(&aht20_data);
+		printf("humidity: %f\r\n",aht20_data.humidity);
+		printf("temp: %f\r\n",aht20_data.temperature);
+		Get_RTC_Time();
+		myfree(SRAMIN,char2);
+	}
+}
+
+void Get_RTC_Time(void)
+{
+    RTC_TimeTypeDef sTime = {0};
+    RTC_DateTypeDef sDate = {0};
+
+    // 获取时间和日期
+    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+    // 打印时间和日期
+    printf("Time: %02d:%02d:%02d\n", sTime.Hours, sTime.Minutes, sTime.Seconds);
+    printf("Date: %02d-%02d-%02d\n", sDate.Year, sDate.Month, sDate.Date);
+}
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
