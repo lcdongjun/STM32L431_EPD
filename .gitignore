@@ -18,7 +18,6 @@
 *.pch
 
 # Libraries
-*.lib
 *.a
 *.la
 *.lo
@@ -51,22 +50,21 @@ Module.symvers
 Mkfile.old
 dkms.conf
 =======
-# --- Keil MDK 生成的文件 ---
-*.uvoptx       # 排除用户配置（保留 .uvprojx 工程文件）
+# --- Keil MDK 生成的文�? ---
+*.uvoptx       # 排除用户配置（保�? .uvprojx 工程文件�?
 *.uvguix.*     # 排除用户界面布局文件
 *.dep          # 排除依赖文件
 *.crf          # 交叉引用文件
-*.o            # 编译后的目标文件
+*.o            # 编译后的�?标文�?
 *.d            # 依赖文件
-*.axf          # 调试可执行文件
+*.axf          # 调试�?执�?�文�?
 *.map          # 内存映射文件
 *.lst          # 列表文件
 
-# --- 编译输出目录 ---
-Objects/       # 排除编译生成的二进制文件目录
-Listings/      # 排除列表文件目录
-*.hex          # 生成的可执行 HEX 文件
-*.bin          # 生成的 BIN 文件
+# --- 编译输出�?�? ---
+Objects/       # 排除编译生成的二进制文件�?�?
+Listings/      # 排除列表文件�?�?
+*.bin          # 生成�? BIN 文件
 
 # --- Keil 临时文件 ---
 *.bak          # 备份文件
@@ -74,19 +72,19 @@ Listings/      # 排除列表文件目录
 *.ini          # 临时配置文件
 JLinkLog.txt   # J-Link 调试日志
 
-# --- 特定工程目录 ---
-MDK-ARM/       # 排除 Keil 自动生成的 ARM 编译目录
-Debug/         # 排除调试目录
-Release/       # 排除发布目录
+# --- 特定工程�?�? ---
+MDK-ARM/       # 排除 Keil �?动生成的 ARM 编译�?�?
+Debug/         # 排除调试�?�?
+Release/       # 排除发布�?�?
 
 # --- 其他 IDE/工具生成文件 ---
-*.sct          # 链接脚本（若自动生成则排除，否则保留）
-*.uvmpw        # 多用户项目文件
-*.dbgdt        # 调试数据库
+*.sct          # 链接脚本（若�?动生成则排除，否则保留）
+*.uvmpw        # 多用户项�?文件
+*.dbgdt        # 调试数据�?
 Template.uvgtx  # 项目模板文件
 
-# --- 系统/编辑器临时文件 ---
-*.suo          # VS Code 用户选项（如果用其他编辑器）
-Thumbs.db      # Windows 缩略图缓存
-.DS_Store      # macOS 目录设置文件
->>>>>>> 8f2ceba (初次上传)
+# --- 系统/编辑器临时文�? ---
+*.suo          # VS Code 用户选项（�?�果用其他编辑器�?
+Thumbs.db      # Windows 缩略图缓�?
+.DS_Store      # macOS �?录�?�置文件
+>>>>>>> 8f2ceba (初�?�上�?)
