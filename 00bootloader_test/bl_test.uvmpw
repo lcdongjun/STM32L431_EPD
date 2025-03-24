@@ -8,13 +8,12 @@
   <WorkspaceName>E:\STM32L431\00bootloader_test\bl_test.uvmpw</WorkspaceName>
 
   <project>
-    <PathAndName>.\bootloader\MDK-ARM\STM32L431.uvprojx</PathAndName>
+    <PathAndName>.\bootloader\MDK-ARM\boot.uvprojx</PathAndName>
     <NodeIsActive>1</NodeIsActive>
-    <NodeIsExpanded>1</NodeIsExpanded>
   </project>
 
   <project>
-    <PathAndName>.\user_app\MDK-ARM\STM32L431.uvprojx</PathAndName>
+    <PathAndName>.\user_app\MDK-ARM\user_app.uvprojx</PathAndName>
   </project>
 
 </ProjectWorkspace>

@@ -306,13 +306,6 @@ int main(void)
 	W25QXX_Init();
 	DS3231_Init();
 	DS3231_SetSQW(SQW_1HZ);
-	HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_SET);
-	
-	for(uint16_t i;i<=100;i++)
-	{
-		Delay_us(10000);
-	}
-	HAL_GPIO_WritePin(BEEP_GPIO_Port,BEEP_Pin,GPIO_PIN_RESET);
 
 //	AlarmConfig config = {
 //			.seconds = 0,
@@ -322,42 +315,42 @@ int main(void)
 //			.mode = ALARM_MATCH_SECOND
 //	};
 //	DS3231_SetAlarm1(&config);
-//	DS3231_ClearAlarmFlag();
-//	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
-//	vTaskDelay(500);
-//	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
-//	vTaskDelay(2000);
-//	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
-//	vTaskDelay(500);
-//	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
-//	vTaskDelay(500);
-//	uint8_t char1[] = {"AT+POWE0\r"};
-//	uint8_t char2[] = {"AT+PWRM2\r"};
-//	HAL_UART_Transmit(&huart1,char1,sizeof(char1),0xffff);
-//	vTaskDelay(500);
-//	HAL_UART_Transmit(&huart1,char2,sizeof(char2),0xffff);
-//	DEV_Module_Init();
-//	EPD_4IN2_V2_Init();
-//	EPD_4IN2_V2_Clear();
-//	rtcAlarmASemaphore = xSemaphoreCreateBinary();
+	DS3231_ClearAlarmFlag();
+	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
+	vTaskDelay(500);
+	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
+	vTaskDelay(2000);
+	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
+	vTaskDelay(500);
+	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
+	vTaskDelay(500);
+	uint8_t char1[] = {"AT+POWE0\r"};
+	uint8_t char2[] = {"AT+PWRM2\r"};
+	HAL_UART_Transmit(&huart1,char1,sizeof(char1),0xffff);
+	vTaskDelay(500);
+	HAL_UART_Transmit(&huart1,char2,sizeof(char2),0xffff);
+	DEV_Module_Init();
+	EPD_4IN2_V2_Init();
+	EPD_4IN2_V2_Clear();
+	rtcAlarmASemaphore = xSemaphoreCreateBinary();
 
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
-//  MX_FREERTOS_Init();
+  MX_FREERTOS_Init();
 
   /* Start scheduler */
 //  osKernelStart();
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-//    xTaskCreate((TaskFunction_t )start_task,  
-//                (const char*    )"start_task",
-//                (uint16_t       )128,
-//                (void*          )NULL,         
-//                (UBaseType_t    )1,
-//                (TaskHandle_t*  )&StartTask_Handler); 					
-//    osKernelStart();
+    xTaskCreate((TaskFunction_t )start_task,  
+                (const char*    )"start_task",
+                (uint16_t       )128,
+                (void*          )NULL,         
+                (UBaseType_t    )1,
+                (TaskHandle_t*  )&StartTask_Handler); 					
+    osKernelStart();
   while (1)
   {
     /* USER CODE END WHILE */

@@ -23,6 +23,7 @@
 /* USER CODE BEGIN 0 */
 #include "w25qxx.h" 
 #include "ATcmd.h"
+#include "bl.h"
 
 SemaphoreHandle_t xSemaphoreUSART1;  // 用于保护USART1的同步
 TaskHandle_t xReceiveTaskHandle;
@@ -61,7 +62,7 @@ void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 460800;
+  huart1.Init.BaudRate = 115200;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -472,27 +473,28 @@ void vReceiveTask(void *pvParameters)
         if (USART1_RC_Flag)
         {
 					USART1_DMA_Receive(rx_data, &rx_length);
+//					USART1_DMA_Send(rx_data,rx_length);
 					if(AT_FlashWrite_Flag == 0)
 					{
 						AT_Command_Parser((char*)rx_data);
 					}
 					else if(AT_FlashWrite_Flag == 1)
 					{
-							if (total_written < at_write_size) 
+						if (total_written < at_write_size) 
+						{
+//							W25QXX_Write(rx_data, at_write_addr + total_written, rx_length);
+							Flash_Write(rx_data, at_write_addr + total_written, rx_length);
+							total_written += rx_length;
+							printf("Written %d bytes, Total: %d/%d\n", rx_length, total_written, at_write_size);
+							if(total_written>= at_write_size)
 							{
-									W25QXX_Write(rx_data, at_write_addr + total_written, rx_length);
-									total_written += rx_length;
-									printf("Written %d bytes, Total: %d/%d\n", rx_length, total_written, at_write_size);
-									if(total_written>= at_write_size)
-									{
-										AT_FlashWrite_Flag = 0;
-										at_write_addr=0;
-										at_write_size=0;
-										total_written=0;
-										
-										printf("Write complete.\n");
-									}
-								}
+								AT_FlashWrite_Flag = 0;
+								at_write_addr=0;
+								at_write_size=0;
+								total_written=0;
+								printf("Write complete.\n");
+							}
+						}
 					}
 				}
 		}

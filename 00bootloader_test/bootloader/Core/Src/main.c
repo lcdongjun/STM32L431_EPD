@@ -44,7 +44,6 @@ TaskHandle_t StartTask_Handler;
 void start_task(void *pvParameters);
 
 
-
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -115,32 +114,29 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	DWT_Init();
 	W25QXX_Init();
-	if (IsUserProgramValid())
+	
+	if (CheckBootFlag()) 
 	{
-			printf("\r\nValid user program found. Jumping to user application...\r\n");
-			JumpToUserApplication();
+		printf("\r\n  Boot flag detected. Staying in Bootloader.\r\n");
 	}
 	else
 	{
-		printf("\r\nno user application !!!\r\n");
+			if (IsUserProgramValid() && HAL_GPIO_ReadPin(KEY_OK_GPIO_Port,KEY_OK_Pin))
+			{
+					printf("\r\nValid user program found. Jumping to user application...\r\n");
+					JumpToUserApplication();
+			}
+			else if(!IsUserProgramValid())
+			{
+				printf("\r\nNo valid user program found. Staying in Bootloader.\r\n");
+				printf("User application Err\r\n");
+				printf("Bootloader Starting\r\n");
+			}
+			else if(IsUserProgramValid() && !HAL_GPIO_ReadPin(KEY_OK_GPIO_Port,KEY_OK_Pin))
+			{
+				printf("\r\nButton pressed. Staying in Bootloader.\r\n");
+			}
 	}
-	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
-	vTaskDelay(500);
-	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
-	vTaskDelay(2000);
-	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
-	vTaskDelay(500);
-	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
-	vTaskDelay(500);
-	uint8_t char1[] = {"AT+POWE0\r"};
-	uint8_t char2[] = {"AT+PWRM2\r"};
-	HAL_UART_Transmit(&huart3,char1,sizeof(char1),0xffff);
-	vTaskDelay(500);
-	HAL_UART_Transmit(&huart3,char2,sizeof(char2),0xffff);
-	DEV_Module_Init();
-	EPD_4IN2_V2_Init();
-	EPD_4IN2_V2_Clear();
-
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -217,7 +213,7 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void test(void *pvParameters);
-
+void boot(void *pvParameters);
 void start_task(void *pvParameters)
 {
     taskENTER_CRITICAL();
@@ -226,35 +222,51 @@ void start_task(void *pvParameters)
                 (uint16_t       )256,        
                 (void*          )NULL,                  
                 (UBaseType_t    )2,        
-                (TaskHandle_t*  )NULL);  
+                (TaskHandle_t*  )NULL);
+		xTaskCreate((TaskFunction_t )boot,             
+                (const char*    )"boot",           
+                (uint16_t       )256,        
+                (void*          )NULL,                  
+                (UBaseType_t    )2,        
+                (TaskHandle_t*  )NULL); 
 				taskEXIT_CRITICAL();
 				vTaskDelete(StartTask_Handler);
 }
 
 void test(void *pvParameters)
 {	
-		taskENTER_CRITICAL();
-			uint8_t *BlackImage;
-			BlackImage = mymalloc(SRAMIN, ((EPD_4IN2_V2_WIDTH % 8 == 0) ? (EPD_4IN2_V2_WIDTH / 8) : (EPD_4IN2_V2_WIDTH / 8 + 1)) * EPD_4IN2_V2_HEIGHT);
-			if (BlackImage == NULL)
-			{
-					printf("Failed to apply for black memory...\r\n");
-			}	
-			
-			Paint_NewImage(BlackImage, EPD_4IN2_V2_WIDTH, EPD_4IN2_V2_HEIGHT, 0, EPD_WHITE);
-			Paint_SelectImage(BlackImage);
-			Paint_Clear(EPD_WHITE);
-			Paint_Show_Str(60,130,"BootLoader Run OK !!!",24,1,0);
-			EPD_4IN2_V2_Display(BlackImage);
-			myfree(SRAMIN,BlackImage);
-			taskEXIT_CRITICAL();
-			
-			while(1)
-			{
-				ButtonTask();
-			}
+		while(1)
+		{
+			ButtonTask();
+		}
 }
 
+void boot(void *pvParameters)
+{
+		printf("boot task run\r\n");
+		vTaskDelay(pdMS_TO_TICKS(1000));
+		printf("EPD Init\r\n");
+		DEV_Module_Init();
+		EPD_4IN2_V2_Init();
+		EPD_4IN2_V2_Clear();
+		uint8_t *BlackImage;
+		BlackImage = mymalloc(SRAMIN, ((EPD_4IN2_V2_WIDTH % 8 == 0) ? (EPD_4IN2_V2_WIDTH / 8) : (EPD_4IN2_V2_WIDTH / 8 + 1)) * EPD_4IN2_V2_HEIGHT);
+		if (BlackImage == NULL)
+		{
+				printf("Failed to apply for black memory...\r\n");
+		}	
+		
+		Paint_NewImage(BlackImage, EPD_4IN2_V2_WIDTH, EPD_4IN2_V2_HEIGHT, 0, EPD_WHITE);
+		Paint_SelectImage(BlackImage);
+		Paint_Clear(EPD_WHITE);
+		Paint_Show_Str(60,130,"Bootloader Started !!!",24,1,0);
+		EPD_4IN2_V2_Display(BlackImage);
+		myfree(SRAMIN,BlackImage);
+		while(1)
+		{
+			vTaskDelay(pdMS_TO_TICKS(1000));
+		}
+}
 /* USER CODE END 4 */
 
 /**

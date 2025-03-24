@@ -4,6 +4,7 @@
 #include "usart.h"
 #include "w25qxx.h"
 #include "test.h"
+#include "bl.h"
 
 #define MAX_CMD_LEN 64
 #define MAX_ARG_LEN  32
@@ -81,7 +82,8 @@ void AT_SetWrite(char *args)
         at_write_addr = strtol(args, NULL, 16);  // 地址为十六进制
         at_write_size = atoi(comma_pos + 1);    // 数据大小为十进制
         printf("WriteAddr: 0x%X, DateSize: %d\n", at_write_addr, at_write_size);
-				W25QXX_Erase_By_Size(at_write_addr,at_write_size);
+//				W25QXX_Erase_By_Size(at_write_addr,at_write_size);
+				Flash_Erase_By_Size(at_write_addr, at_write_size);
 				printf("Erase OK\r\n");
     } else {
         printf("Invalid argument for AT+SetWrite\n");
