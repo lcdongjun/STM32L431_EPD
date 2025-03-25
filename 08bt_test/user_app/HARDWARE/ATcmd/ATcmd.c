@@ -31,14 +31,14 @@ void AT_ReadDate(void);
 void AT_SetRTC(char *args);
 
 AT_Command_t cmd_table[] = {
-    {"AT+HELP", AT_HELP, "Shows this help message with a list of available commands."},
-    {"AT+ADC_Value", AT_ADC_Value, "Usage: AT+ADC_Value=<1/0>\n  1 - Start ADC task\n  0 - Stop ADC task"},
-    {"AT+EXP_test", AT_EXP_test, "Usage: AT+EXP_test=<1/0>\n  1 - Start EXP test task\n  0 - Stop EXP test task"},
-    {"AT+EPD_test", AT_EPD_test, "Usage: AT+EPD_test=<1/0>\n  1 - Start EPD test task\n  0 - Stop EPD test task"},
-    {"AT+SetWrite", AT_SetWrite, "Usage: AT+SetWrite=0x00,size\n  Sets a value for write operation"},
-    {"AT+WriteDate", AT_WriteDate, "Usage: AT+WriteDate=<date>\n  Write a specific date to the system"},
-    {"AT+SetRead", AT_SetRead, "Usage: AT+SetRead=0x00,size\n  Sets a value for read operation"},
-    {"AT+SetRTC", AT_SetRTC, "Usage: AT+SetRTC=YYYY-MM-DD HH:MM:SS WeekDay\n  Set the RTC time in the format YYYY-MM-DD HH:MM:SS WeekDay (1=Monday, ..., 7=Sunday)"},
+    {"BT+HELP", AT_HELP, "Shows this help message with a list of available commands."},
+    {"BT+ADC_Value", AT_ADC_Value, "Usage: BT+ADC_Value=<1/0>\n  1 - Start ADC task\n  0 - Stop ADC task"},
+    {"BT+EXP_test", AT_EXP_test, "Usage: BT+EXP_test=<1/0>\n  1 - Start EXP test task\n  0 - Stop EXP test task"},
+    {"BT+EPD_test", AT_EPD_test, "Usage: BT+EPD_test=<1/0>\n  1 - Start EPD test task\n  0 - Stop EPD test task"},
+    {"BT+SetWrite", AT_SetWrite, "Usage: BT+SetWrite=0x00,size\n  Sets a value for write operation"},
+    {"BT+WriteDate", AT_WriteDate, "Usage: BT+WriteDate=<date>\n  Write a specific date to the system"},
+    {"BT+SetRead", AT_SetRead, "Usage: BT+SetRead=0x00,size\n  Sets a value for read operation"},
+    {"BT+SetRTC", AT_SetRTC, "Usage: BT+SetRTC=YYYY-MM-DD HH:MM:SS WeekDay\n  Set the RTC time in the format YYYY-MM-DD HH:MM:SS WeekDay (1=Monday, ..., 7=Sunday)"},
 };
 
 #define CMD_TABLE_SIZE (sizeof(cmd_table) / sizeof(cmd_table[0]))
@@ -63,13 +63,13 @@ void AT_Command_Parser(char *input)
         }
     }
     // 如果没有匹配的命令，可以在这里返回错误响应
-    printf("Unknown command: %s\nAT+HELP=1 \n", input);
+    printf("Unknown command: %s\nBT+HELP=1 \n", input);
 }
 
 void AT_HELP(char *args)
 {
     // 输出所有可用的 AT 命令及其帮助信息
-    printf("Available AT commands:\n");
+    printf("Available BT commands:\n");
     for (int i = 0; i < CMD_TABLE_SIZE; i++) {
         printf("%s\n", cmd_table[i].cmd);
         printf("Description: %s\n", cmd_table[i].help);
@@ -115,7 +115,7 @@ void AT_ADC_Value(char *args)
     } 
 		else 
 		{
-        printf("Invalid argument for AT+ADC_Value\n");
+        printf("Invalid argument for BT+ADC_Value\n");
     }
 }
 
@@ -159,7 +159,7 @@ void AT_EXP_test(char *args)
     } 
 		else 
 		{
-        printf("Invalid argument for AT+EXP_test\n");
+        printf("Invalid argument for BT+EXP_test\n");
     }
 }
 
@@ -201,7 +201,7 @@ void AT_EPD_test(char *args)
     } 
 		else 
 		{
-        printf("Invalid argument for AT+EPD_test\n");
+        printf("Invalid argument for BT+EPD_test\n");
     }
 }
 
@@ -222,7 +222,7 @@ void AT_SetWrite(char *args)
 				W25QXX_Erase_By_Size(at_write_addr,at_write_size);
 				printf("Erase OK\r\n");
     } else {
-        printf("Invalid argument for AT+SetWrite\n");
+        printf("Invalid argument for BT+SetWrite\n");
     }
 }
 
@@ -248,7 +248,7 @@ void AT_SetRead(char *args)
         printf("ReadAddr: 0x%X, DateSize: %d\n", at_read_addr, at_read_size);
 				AT_ReadDate();
     } else {
-        printf("Invalid argument for AT+SetWrite\n");
+        printf("Invalid argument for BT+SetWrite\n");
     }
 }
 
@@ -328,6 +328,6 @@ void AT_SetRTC(char *args)
         // 设置 RTC 时间
         RTC_SetTime(year, month, day, hour, minute, second, weekday);
     } else {
-        printf("Invalid argument for AT+SetRTC. Please use the format YYYY-MM-DD HH:MM:SS WeekDay\n");
+        printf("Invalid argument for BT+SetRTC. Please use the format YYYY-MM-DD HH:MM:SS WeekDay\n");
     }
 }

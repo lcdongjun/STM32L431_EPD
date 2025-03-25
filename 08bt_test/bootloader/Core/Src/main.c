@@ -221,14 +221,14 @@ void start_task(void *pvParameters)
 		vTaskDelay(500);
 		HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
 		vTaskDelay(2000);
-		HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
-		vTaskDelay(500);
-		HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
-		vTaskDelay(500);
-		uint8_t char2[] = {"AT+RESET\r\n"};
-		USART3_DMA_Send(char2,sizeof(char2));
-		vTaskDelay(100);
-		USART1_DMA_Send(char2,sizeof(char2));
+//		HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
+//		vTaskDelay(500);
+//		HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
+//		vTaskDelay(500);
+//		uint8_t char2[] = {"AT+RESET\r\n"};
+//		USART3_DMA_Send(char2,sizeof(char2));
+//		vTaskDelay(100);
+//		USART1_DMA_Send(char2,sizeof(char2));
 		
 //		uint8_t char1[] = {"AT+POWE0\r"};
 //		uint8_t char2[] = {"AT+PWRM2\r"};
@@ -238,12 +238,12 @@ void start_task(void *pvParameters)
                 (void*          )NULL,                  
                 (UBaseType_t    )2,        
                 (TaskHandle_t*  )NULL);
-//		xTaskCreate((TaskFunction_t )boot,             
-//                (const char*    )"boot",           
-//                (uint16_t       )256,        
-//                (void*          )NULL,                  
-//                (UBaseType_t    )2,        
-//                (TaskHandle_t*  )NULL); 
+		xTaskCreate((TaskFunction_t )boot,             
+                (const char*    )"boot",           
+                (uint16_t       )256,        
+                (void*          )NULL,                  
+                (UBaseType_t    )2,        
+                (TaskHandle_t*  )NULL); 
 				taskEXIT_CRITICAL();
 				vTaskDelete(StartTask_Handler);
 }

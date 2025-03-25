@@ -320,15 +320,6 @@ int main(void)
 	vTaskDelay(500);
 	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
 	vTaskDelay(2000);
-	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_RESET);
-	vTaskDelay(500);
-	HAL_GPIO_WritePin(BT_KEY_GPIO_Port,BT_KEY_Pin,GPIO_PIN_SET);
-	vTaskDelay(500);
-	uint8_t char1[] = {"AT+POWE0\r"};
-	uint8_t char2[] = {"AT+PWRM2\r"};
-	HAL_UART_Transmit(&huart1,char1,sizeof(char1),0xffff);
-	vTaskDelay(500);
-	HAL_UART_Transmit(&huart1,char2,sizeof(char2),0xffff);
 	DEV_Module_Init();
 	EPD_4IN2_V2_Init();
 	EPD_4IN2_V2_Clear();

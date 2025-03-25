@@ -26,10 +26,10 @@ void AT_SetRead(char *args);
 void AT_ReadDate(void);
 
 AT_Command_t cmd_table[] = {
-    {"AT+HELP", AT_HELP, "Shows this help message with a list of available commands."},
-    {"AT+SetWrite", AT_SetWrite, "Usage: AT+SetWrite=0x00,size\n  Sets a value for write operation"},
-    {"AT+WriteDate", AT_WriteDate, "Usage: AT+WriteDate=<date>\n  Write a specific date to the system"},
-    {"AT+SetRead", AT_SetRead, "Usage: AT+SetRead=0x00,size\n  Sets a value for read operation"},
+    {"ST+HELP", AT_HELP, "Shows this help message with a list of available commands."},
+    {"ST+SetWrite", AT_SetWrite, "Usage: ST+SetWrite=0x00,size\n  Sets a value for write operation"},
+    {"ST+WriteDate", AT_WriteDate, "Usage: ST+WriteDate=<date>\n  Write a specific date to the system"},
+    {"ST+SetRead", AT_SetRead, "Usage: ST+SetRead=0x00,size\n  Sets a value for read operation"},
 };
 
 #define CMD_TABLE_SIZE (sizeof(cmd_table) / sizeof(cmd_table[0]))
@@ -54,13 +54,13 @@ void AT_Command_Parser(char *input)
         }
     }
     // 如果没有匹配的命令，可以在这里返回错误响应
-    printf("Unknown command: %s\nAT+HELP=1 \n", input);
+    printf("Unknown command: %s\nST+HELP=1 \n", input);
 }
 
 void AT_HELP(char *args)
 {
     // 输出所有可用的 AT 命令及其帮助信息
-    printf("Available AT commands:\n");
+    printf("Available ST commands:\n");
     for (int i = 0; i < CMD_TABLE_SIZE; i++) {
         printf("%s\n", cmd_table[i].cmd);
         printf("Description: %s\n", cmd_table[i].help);
@@ -113,7 +113,7 @@ void AT_SetRead(char *args)
         printf("ReadAddr: 0x%X, DateSize: %d\n", at_read_addr, at_read_size);
 				AT_ReadDate();
     } else {
-        printf("Invalid argument for AT+SetWrite\n");
+        printf("Invalid argument for ST+SetWrite\n");
     }
 }
 
