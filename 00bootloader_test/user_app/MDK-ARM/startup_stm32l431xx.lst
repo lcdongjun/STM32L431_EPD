@@ -603,10 +603,10 @@ ARM Macro Assembler    Page 10
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=stm32l431\startup_stm32l431xx.d -ostm32l431\startup_stm32l43
-1xx.o -I../Core/Inc -I.\RTE\_STM32L431 -ID:\keil5\ARM\PACK\ARM\CMSIS\6.1.0\CMSI
-S\Core\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION S
-ETA 541" --predefine="STM32L431xx SETA 1" --predefine="_RTE_ SETA 1" --list=sta
-rtup_stm32l431xx.lst startup_stm32l431xx.s
+1xx.o -I../Core/Inc -I.\RTE\_STM32L431 -ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core
+\Include --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 53
+8" --predefine="_RTE_ SETA 1" --predefine="STM32L431xx SETA 1" --predefine="_RT
+E_ SETA 1" --list=startup_stm32l431xx.lst startup_stm32l431xx.s
 
 
 
