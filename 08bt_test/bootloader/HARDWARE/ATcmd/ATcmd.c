@@ -24,12 +24,14 @@ void AT_SetWrite(char *args);
 void AT_WriteDate(char *args);
 void AT_SetRead(char *args);
 void AT_ReadDate(void);
+void AT_Reboot(char *args);
 
 AT_Command_t cmd_table[] = {
-    {"ST+HELP", AT_HELP, "Shows this help message with a list of available commands."},
-    {"ST+SetWrite", AT_SetWrite, "Usage: ST+SetWrite=0x00,size\n  Sets a value for write operation"},
-    {"ST+WriteDate", AT_WriteDate, "Usage: ST+WriteDate=<date>\n  Write a specific date to the system"},
-    {"ST+SetRead", AT_SetRead, "Usage: ST+SetRead=0x00,size\n  Sets a value for read operation"},
+    {"BT+HELP", AT_HELP, "Shows this help message with a list of available commands."},
+    {"BT+SetWrite", AT_SetWrite, "Usage: BT+SetWrite=0x00,size\n  Sets a value for write operation"},
+    {"BT+WriteDate", AT_WriteDate, "Usage: BT+WriteDate=<date>\n  Write a specific date to the system"},
+    {"BT+SetRead", AT_SetRead, "Usage: BT+SetRead=0x00,size\n  Sets a value for read operation"},
+		{"BT+Reboot", AT_Reboot, "Usage: BT+Reboot=<1/0>\n  1 - Reboot to BootLoader\n  0 - Reboot to User_app"},
 };
 
 #define CMD_TABLE_SIZE (sizeof(cmd_table) / sizeof(cmd_table[0]))
@@ -54,13 +56,13 @@ void AT_Command_Parser(char *input)
         }
     }
     // 如果没有匹配的命令，可以在这里返回错误响应
-    printf("Unknown command: %s\nST+HELP=1 \n", input);
+    printf("Unknown command: %s\nBT+HELP=1 \n", input);
 }
 
 void AT_HELP(char *args)
 {
     // 输出所有可用的 AT 命令及其帮助信息
-    printf("Available ST commands:\n");
+    printf("Available BT commands:\n");
     for (int i = 0; i < CMD_TABLE_SIZE; i++) {
         printf("%s\n", cmd_table[i].cmd);
         printf("Description: %s\n", cmd_table[i].help);
@@ -87,7 +89,7 @@ void AT_SetWrite(char *args)
 				printf("Erase OK\r\n");
 				HAL_FLASH_Unlock();
     } else {
-        printf("Invalid argument for AT+SetWrite\n");
+        printf("Invalid argument for BT+SetWrite\n");
     }
 }
 
@@ -113,7 +115,7 @@ void AT_SetRead(char *args)
         printf("ReadAddr: 0x%X, DateSize: %d\n", at_read_addr, at_read_size);
 				AT_ReadDate();
     } else {
-        printf("Invalid argument for ST+SetWrite\n");
+        printf("Invalid argument for BT+SetWrite\n");
     }
 }
 
@@ -159,4 +161,21 @@ void AT_ReadDate()
     // 重置读取参数，准备下一次读取
     at_read_size = 0;
     at_read_addr = 0;
+}
+
+
+
+void AT_Reboot(char *args)
+{
+	int set = atoi(args);
+	if(set ==1)
+	{
+		printf("ReBoot to BootLoader");
+		SystemResetToBoot();
+	}
+	else
+	{
+		printf("ReBoot to User App");
+		NVIC_SystemReset();
+	}
 }

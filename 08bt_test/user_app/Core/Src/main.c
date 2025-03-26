@@ -306,16 +306,16 @@ int main(void)
 	W25QXX_Init();
 	DS3231_Init();
 	DS3231_SetSQW(SQW_1HZ);
-
 //	AlarmConfig config = {
-//			.seconds = 0,
-//			.minutes = 0x7F,
-//			.hours = 0x7F,
-//			.day_or_date = 0x7F,
-//			.mode = ALARM_MATCH_SECOND
+//			.seconds = 1,
+//			.minutes = 0,  // 这里可以是任意值，匹配所有分钟
+//			.hours = 0,    // 这里可以是任意值，匹配所有小时
+//			.day_or_date = 1, 
+//			.mode = ALARM_MATCH_SECOND  // 匹配分钟和秒
 //	};
 //	DS3231_SetAlarm1(&config);
-	DS3231_ClearAlarmFlag();
+//DS3231_ClearAlarmFlag();
+	
 	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
 	vTaskDelay(500);
 	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);

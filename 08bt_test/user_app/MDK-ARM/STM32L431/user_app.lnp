@@ -16,6 +16,7 @@
 "stm32l431\stm32l4xx_it.o"
 "stm32l431\stm32l4xx_hal_msp.o"
 "stm32l431\stm32l4xx_hal_timebase_tim.o"
+"stm32l431\bl.o"
 "stm32l431\stm32l4xx_hal_adc.o"
 "stm32l431\stm32l4xx_hal_adc_ex.o"
 "stm32l431\stm32l4xx_hal.o"

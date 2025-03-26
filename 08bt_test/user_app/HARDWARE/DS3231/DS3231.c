@@ -234,39 +234,73 @@ bool DS3231_Enable32kHz(bool enable) {
 
 bool DS3231_SetAlarm1(const AlarmConfig *config) {
     uint8_t data[4];
-    
 
-    data[0] = dec_to_bcd(config->seconds) | ((config->mode >= ALARM_MATCH_MIN_SEC) ? 0x00 : 0x80);
-    data[1] = dec_to_bcd(config->minutes) | ((config->mode >= ALARM_MATCH_HOUR_MIN_SEC) ? 0x00 : 0x80);
-    data[2] = dec_to_bcd(config->hours) | ((config->mode >= ALARM_MATCH_DATE_HOUR_MIN_SEC) ? 0x00 : 0x80);
-    
-
-    if(config->mode == ALARM_MATCH_DAY_HOUR_MIN_SEC) {
-        data[3] = dec_to_bcd(config->day_or_date) | 0x40;
-    } else {
-        data[3] = dec_to_bcd(config->day_or_date) | ((config->mode >= ALARM_MATCH_DAY_HOUR_MIN_SEC) ? 0x00 : 0x80);
+    // 设置秒
+    data[0] = dec_to_bcd(config->seconds);
+    if (config->mode == ALARM_MATCH_SECOND) {
+        data[0] |= 0x80;
     }
-		
+
+    // 设置分钟
+    data[1] = dec_to_bcd(config->minutes);
+    if (config->mode <= ALARM_MATCH_SECOND) {
+        data[1] |= 0x80;
+    }
+
+    // 设置小时
+    data[2] = dec_to_bcd(config->hours);
+    if (config->mode <= ALARM_MATCH_MIN_SEC) {
+        data[2] |= 0x80;
+    }
+
+    // 设置日期或星期
+    if (config->mode == ALARM_MATCH_DATE_HOUR_MIN_SEC) {
+        data[3] = dec_to_bcd(config->day_or_date) & 0x3F;
+    } else if (config->mode == ALARM_MATCH_DAY_HOUR_MIN_SEC) {
+        data[3] = (dec_to_bcd(config->day_or_date) & 0x07) | 0x40;
+    } else {
+        data[3] = 0x80;
+    }
+
+    // 写入 DS3231
     I2C_Start();
-    if(!I2C_WriteByte(DS3231_ADDR_WRITE)) { I2C_Stop(); return false; }
-    if(!I2C_WriteByte(DS3231_ALARM1_REG)) { I2C_Stop(); return false; }
-    for(int i=0; i<4; i++) {
-        if(!I2C_WriteByte(data[i])) { I2C_Stop(); return false; }
+    if (!I2C_WriteByte(DS3231_ADDR_WRITE) ||
+        !I2C_WriteByte(DS3231_ALARM1_REG)) {
+        I2C_Stop();
+        return false;
+    }
+
+    for (int i = 0; i < 4; i++) {
+        if (!I2C_WriteByte(data[i])) {
+            I2C_Stop();
+            return false;
+        }
     }
     I2C_Stop();
+
+    // 读取控制寄存器
     uint8_t ctrl;
-    if(!DS3231_ReadRegister(DS3231_CONTROL_REG, &ctrl)) return false;
-    ctrl |= (1 << 0);
-    return DS3231_WriteRegister(DS3231_CONTROL_REG, ctrl);
+    if (!DS3231_ReadRegister(DS3231_CONTROL_REG, &ctrl)) return false;
+
+    // 使能 A1 闹钟 + 使能 INT/SQW 输出为中断模式
+    ctrl |= (1 << 0);  // AI1E 使能 A1 闹钟中断
+    ctrl |= DS3231_INTCN; // 使能中断模式
+    if (!DS3231_WriteRegister(DS3231_CONTROL_REG, ctrl)) return false;
+
+    return true;
 }
+
 /* 中断处理相关函数 */
 // 清除闹钟标志位
 bool DS3231_ClearAlarmFlag(void) {
     uint8_t status;
-    if(!DS3231_ReadRegister(DS3231_STATUS_REG, &status)) return false;
-    status &= ~(1 << 0); // 清除A1F标志
-    return DS3231_WriteRegister(DS3231_STATUS_REG, status);
+    if (!DS3231_ReadRegister(DS3231_STATUS_REG, &status)) return false;
+
+    status &= ~(1 << 0);  // 清除 A1F 标志
+    bool success = DS3231_WriteRegister(DS3231_STATUS_REG, status);
+    return success;
 }
+
 // 检查闹钟触发状态
 bool DS3231_CheckAlarmTriggered(void) {
     uint8_t status;

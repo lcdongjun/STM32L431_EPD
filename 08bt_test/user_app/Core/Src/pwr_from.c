@@ -91,14 +91,13 @@ void RTC_AlarmATask(void *argument)
         {
             AllInit();
             printf("KEY_OK start\r\n");
-
+						
             vTaskResume(TimeDisplayTask_Handle);
             for (uint8_t i = 0; i <= 10; i++)
             {
                 vTaskDelay(pdMS_TO_TICKS(12000));
             }
             KEY_OK_Flage = 0;
-
             printf("KEY_OK stop\r\n");
             vTaskSuspend(TimeDisplayTask_Handle);
         }
@@ -120,6 +119,7 @@ void TimeDisplayTask(void *argument)
 
 void USAR_RTC_Alarm_IRQHandler()
 {
+		DS3231_ClearAlarmFlag();
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
     xSemaphoreGiveFromISR(rtcAlarmASemaphore, &xHigherPriorityTaskWoken);
 }

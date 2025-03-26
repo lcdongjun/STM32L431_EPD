@@ -683,6 +683,11 @@
                 </FileArmAds>
               </FileOption>
             </File>
+            <File>
+              <FileName>bl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\bl.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
