@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "usart.h": "c",
+        "main.h": "c",
+        "semphr.h": "c",
+        "task.h": "c",
+        "queue.h": "c",
+        "freertos.h": "c",
+        "stm32l4xx_hal.h": "c"
+    }
+}

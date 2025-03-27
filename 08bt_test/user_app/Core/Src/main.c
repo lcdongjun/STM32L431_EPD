@@ -305,7 +305,7 @@ int main(void)
 	AHT20_Init();
 	W25QXX_Init();
 	DS3231_Init();
-	DS3231_SetSQW(SQW_1HZ);
+	DS3231_SetSQW(SQW_DISABLE);
 //	AlarmConfig config = {
 //			.seconds = 1,
 //			.minutes = 0,  // 这里可以是任意值，匹配所有分钟
