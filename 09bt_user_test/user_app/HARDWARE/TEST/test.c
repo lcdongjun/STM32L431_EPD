@@ -170,60 +170,66 @@ void Piant_BMP(uint32_t flashReadAddress,uint16_t xstart,uint16_t ystart,uint16_
 
 void HiTp(uint32_t xstart ,uint32_t ystart)
 {
-		static uint8_t char_flage = 0;
-		uint8_t *BlackImage;
-		if(	xstart>320||ystart>240)
-		{
-			printf("xstart or ystart err \r\n");
-			return;
-		}
-		if(char_flage ==0)
-		{
-				BlackImage = mymalloc(SRAMIN, (48/8)*60);
+	 if(xSemaphoreTake(xDisplayMutex, portMAX_DELAY ) == pdTRUE) 
+	 {
+			static uint8_t char_flage = 0;
+			uint8_t *BlackImage;
+			if(	xstart>320||ystart>240)
+			{
+				printf("xstart or ystart err \r\n");
+				return;
+			}
+			if(char_flage ==0)
+			{
+					BlackImage = mymalloc(SRAMIN, (48/8)*60);
+					if (BlackImage == NULL)
+					{
+							printf("Failed to apply for black memory...\r\n");
+					}	
+					
+					Paint_NewImage(BlackImage, 48, 60, 0, EPD_WHITE);
+					Paint_SelectImage(BlackImage);
+					Paint_Clear(EPD_WHITE);
+					Paint_Show_Str(1,1," T:",24,1,0);
+					Paint_Show_Str(1,31,"RH:",24,1,0);
+					EPD_4IN2_V2_PartialDisplay(BlackImage, xstart, ystart,xstart+48,ystart+60);
+					myfree(SRAMIN,BlackImage);
+					char_flage = 1;
+			}
+			if(char_flage ==1)
+			{
+				
+				Sync_AHT20();
+				Sync_BatteryLevel();
+				BlackImage = mymalloc(SRAMIN, (56/8)*60);
 				if (BlackImage == NULL)
 				{
 						printf("Failed to apply for black memory...\r\n");
 				}	
-				
-				Paint_NewImage(BlackImage, 48, 60, 0, EPD_WHITE);
+				Paint_NewImage(BlackImage, 56, 60, 0, EPD_WHITE);
 				Paint_SelectImage(BlackImage);
 				Paint_Clear(EPD_WHITE);
-				Paint_Show_Str(1,1," T:",24,1,0);
-				Paint_Show_Str(1,31,"RH:",24,1,0);
-				EPD_4IN2_V2_PartialDisplay(BlackImage, xstart, ystart,xstart+48,ystart+60);
-				myfree(SRAMIN,BlackImage);
-				char_flage = 1;
-		}
-		if(char_flage ==1)
-		{
-			
-			Sync_AHT20();
-			Sync_BatteryLevel();
-			BlackImage = mymalloc(SRAMIN, (56/8)*60);
-			if (BlackImage == NULL)
-			{
-					printf("Failed to apply for black memory...\r\n");
-			}	
-			Paint_NewImage(BlackImage, 56, 60, 0, EPD_WHITE);
-			Paint_SelectImage(BlackImage);
-			Paint_Clear(EPD_WHITE);
-			Paint_Show_xDecnum(1,1,SystemInfo.Weather.aht20_data.temperature,24,1,1,0);
-			Paint_Show_xDecnum(1,31,SystemInfo.Weather.aht20_data.humidity,24,1,1,0);
-			EPD_4IN2_V2_PartialDisplay(BlackImage, xstart+40, ystart,xstart+96,ystart+60);
-			myfree(SRAMIN,BlackImage);	
-		}
+				Paint_Show_xDecnum(1,1,SystemInfo.Weather.aht20_data.temperature,24,1,1,0);
+				Paint_Show_xDecnum(1,31,SystemInfo.Weather.aht20_data.humidity,24,1,1,0);
+				EPD_4IN2_V2_PartialDisplay(BlackImage, xstart+40, ystart,xstart+96,ystart+60);
+				myfree(SRAMIN,BlackImage);	
+			}
+			xSemaphoreGive(xDisplayMutex);
+	 }
 }
 
 void Bat(uint32_t xstart,uint32_t ystart)
 {
 
 		Sync_BatteryLevel();
-		uint8_t *BlackImage;
-		if(	xstart>320||ystart>240)
-		{
-			printf("xstart or ystart err \r\n");
-			return;
-		}
+	 if(xSemaphoreTake(xDisplayMutex, portMAX_DELAY ) == pdTRUE) 
+	 {
+			uint8_t *BlackImage;
+			if(	xstart>320||ystart>240)
+			{
+				printf("xstart or ystart err \r\n");
+				return;
+			}
 			BlackImage = mymalloc(SRAMIN, (90/8)*30);
 			if (BlackImage == NULL)
 			{
@@ -238,5 +244,7 @@ void Bat(uint32_t xstart,uint32_t ystart)
 			Paint_Show_xNum(50,1,(uint32_t)SystemInfo.SystemStatus.batteryLevel,24,1,0);
 			EPD_4IN2_V2_PartialDisplay(BlackImage, xstart, ystart,xstart+90,ystart+30);
 			myfree(SRAMIN,BlackImage);
+			xSemaphoreGive(xDisplayMutex);
+	 }
 }
 

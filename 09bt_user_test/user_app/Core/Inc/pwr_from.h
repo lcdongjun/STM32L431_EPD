@@ -14,7 +14,7 @@ void AllInit(void);
 void RTC_AlarmATask(void *argument);
 void USAR_RTC_Alarm_IRQHandler(void);
 void USAR_EXTI11_IRQHandler(void);
-
+void InitOSResources(void);
 
 #ifdef __cplusplus
 }

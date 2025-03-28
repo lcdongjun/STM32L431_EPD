@@ -9,16 +9,16 @@ void EPD_GPIO_Init()
 
 uint8_t DEV_SPI_WriteByte(UBYTE value)
 {
-
+		taskENTER_CRITICAL();
     UBYTE RxData = 0;
-
+		
     if (HAL_SPI_TransmitReceive(&hspi1, &value, &RxData, 1, HAL_MAX_DELAY) != HAL_OK)
     {
         // ¥ÌŒÛ¥¶¿Ì
         return 0xFF;
     }
+		taskEXIT_CRITICAL();
     return RxData;
-	
 }
 
 void DEV_SPI_Write_nByte(UBYTE *value, UDOUBLE len)

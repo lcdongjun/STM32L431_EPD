@@ -145,61 +145,67 @@ void drawMonth(Month *month, u16 x_start, u16 y_start)
 
 void displayCalendar(u16 x_start, u16 y_start)
 {
-		uint8_t *Partial_Calendar_Image;
-		Partial_Calendar_Image = mymalloc(SRAMIN,(32*7 / 8 + 6) * (32*7+6));
-		if (Partial_Calendar_Image == NULL)
-    {
-        printf("Failed to apply for partial memory...\r\n");
-    }
-		Paint_NewImage(Partial_Calendar_Image, 32*7 + 6, 32*7+6, 0, EPD_WHITE);
-		Paint_Clear(EPD_WHITE);
-		
-		for(u8 i=0;i<12;i++)
-		{
-			if(CalendarStruct.Year.months[i].isTomonth ==1 )
+	 if(xSemaphoreTake(xDisplayMutex, portMAX_DELAY ) == pdTRUE) 
+	 {
+			uint8_t *Partial_Calendar_Image;
+			Partial_Calendar_Image = mymalloc(SRAMIN,(32*7 / 8 + 6) * (32*7+6));
+			if (Partial_Calendar_Image == NULL)
 			{
-				drawMonth(&CalendarStruct.Year.months[i], 6, 6);
-				break;
+					printf("Failed to apply for partial memory...\r\n");
 			}
-		}
-		EPD_4IN2_V2_PartialDisplay(Partial_Calendar_Image, x_start, y_start, x_start+(32*7 + 6), y_start+(32*7+6));
-		myfree(SRAMIN,Partial_Calendar_Image);
-		
+			Paint_NewImage(Partial_Calendar_Image, 32*7 + 6, 32*7+6, 0, EPD_WHITE);
+			Paint_Clear(EPD_WHITE);
+			
+			for(u8 i=0;i<12;i++)
+			{
+				if(CalendarStruct.Year.months[i].isTomonth ==1 )
+				{
+					drawMonth(&CalendarStruct.Year.months[i], 6, 6);
+					break;
+				}
+			}
+			EPD_4IN2_V2_PartialDisplay(Partial_Calendar_Image, x_start, y_start, x_start+(32*7 + 6), y_start+(32*7+6));
+			myfree(SRAMIN,Partial_Calendar_Image);
+			xSemaphoreGive(xDisplayMutex);
+	 }
 }
 void displayTime(u16 x_start, u16 y_start)
 {
-		uint8_t *Partial_Time_Image;
-		Partial_Time_Image = mymalloc(SRAMIN,(120 / 8 ) * (48+4));
-		if (Partial_Time_Image == NULL)
-    {
-        printf("Failed to apply for partial memory...\r\n");
-    }
-		Paint_NewImage(Partial_Time_Image, 120, 52, 0, EPD_WHITE);
-		Paint_Clear(EPD_WHITE);
-		Paint_Show_Char(1+(48*1),2,':',48,1,1);
-		if(CalendarStruct.Time.Hour<10)
-		{
-			Paint_Show_xNum(1,5,0,48,1,0);
-			Paint_Show_xNum(1+24,5,CalendarStruct.Time.Hour,48,1,0);
-		}
-		else
-		{
-			Paint_Show_xNum(1,5,CalendarStruct.Time.Hour,48,1,0);
-		}
-		
-		if(CalendarStruct.Time.Min<10)
-		{
-			Paint_Show_xNum(1+(48*1)+24,5,0,48,1,0);
-			Paint_Show_xNum(1+(48*2),5,CalendarStruct.Time.Min,48,1,0);
-		}
-		else
-		{
-			Paint_Show_xNum(1+(48*1)+24,5,CalendarStruct.Time.Min,48,1,0);
-		}
-		
-		EPD_4IN2_V2_PartialDisplay(Partial_Time_Image, x_start, y_start, x_start+120, y_start+52 );
-		myfree(SRAMIN,Partial_Time_Image);
-		
+	 if(xSemaphoreTake(xDisplayMutex, portMAX_DELAY ) == pdTRUE) 
+	 {
+			uint8_t *Partial_Time_Image;
+			Partial_Time_Image = mymalloc(SRAMIN,(120 / 8 ) * (48+4));
+			if (Partial_Time_Image == NULL)
+			{
+					printf("Failed to apply for partial memory...\r\n");
+			}
+			Paint_NewImage(Partial_Time_Image, 120, 52, 0, EPD_WHITE);
+			Paint_Clear(EPD_WHITE);
+			Paint_Show_Char(1+(48*1),2,':',48,1,1);
+			if(CalendarStruct.Time.Hour<10)
+			{
+				Paint_Show_xNum(1,5,0,48,1,0);
+				Paint_Show_xNum(1+24,5,CalendarStruct.Time.Hour,48,1,0);
+			}
+			else
+			{
+				Paint_Show_xNum(1,5,CalendarStruct.Time.Hour,48,1,0);
+			}
+			
+			if(CalendarStruct.Time.Min<10)
+			{
+				Paint_Show_xNum(1+(48*1)+24,5,0,48,1,0);
+				Paint_Show_xNum(1+(48*2),5,CalendarStruct.Time.Min,48,1,0);
+			}
+			else
+			{
+				Paint_Show_xNum(1+(48*1)+24,5,CalendarStruct.Time.Min,48,1,0);
+			}
+			
+			EPD_4IN2_V2_PartialDisplay(Partial_Time_Image, x_start, y_start, x_start+120, y_start+52 );
+			myfree(SRAMIN,Partial_Time_Image);
+			xSemaphoreGive(xDisplayMutex);
+	 }
 }
 
 // 主程序，初始化并显示日历

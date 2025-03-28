@@ -45,6 +45,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+SemaphoreHandle_t xDisplayMutex;
 TaskHandle_t StartTask_Handler;
 void start_task(void *pvParameters);
 
@@ -306,25 +307,18 @@ int main(void)
 	W25QXX_Init();
 	DS3231_Init();
 	DS3231_SetSQW(SQW_DISABLE);
-//	AlarmConfig config = {
-//			.seconds = 1,
-//			.minutes = 0,  // �������������ֵ��ƥ�����з���
-//			.hours = 0,    // �������������ֵ��ƥ������Сʱ
-//			.day_or_date = 1, 
-//			.mode = ALARM_MATCH_SECOND  // ƥ����Ӻ���
-//	};
-//	DS3231_SetAlarm1(&config);
-//DS3231_ClearAlarmFlag();
 	
 	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_RESET);
 	vTaskDelay(500);
 	HAL_GPIO_WritePin(BT_LINK_GPIO_Port,BT_BRTS_Pin,GPIO_PIN_SET);
 	vTaskDelay(2000);
+//	vTaskDelay(2000);
+//	USART3_DMA_Send(pwrm,sizeof(pwrm));
 	DEV_Module_Init();
 	EPD_4IN2_V2_Init();
 	EPD_4IN2_V2_Clear();
 	rtcAlarmASemaphore = xSemaphoreCreateBinary();
-
+	xDisplayMutex = xSemaphoreCreateMutex();
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
@@ -406,6 +400,7 @@ void test(void *pvParameters);
 void start_task(void *pvParameters)
 {
     taskENTER_CRITICAL();
+		InitOSResources();
     xTaskCreate((TaskFunction_t )RTC_AlarmATask,             
                 (const char*    )"RTC_WakeupTask",           
                 (uint16_t       )512,        
@@ -418,20 +413,27 @@ void start_task(void *pvParameters)
                 (uint16_t       )256,        
                 (void*          )NULL,                  
                 (UBaseType_t    )2,        
-                (TaskHandle_t*  )NULL);  
-				taskEXIT_CRITICAL();
-				vTaskDelete(StartTask_Handler);
+                (TaskHandle_t*  )NULL);
+		taskEXIT_CRITICAL();
+		vTaskDelete(StartTask_Handler);
 }
 
 void test(void *pvParameters)
-{	
-		taskENTER_CRITICAL();
-		Paint_NewImage((uint8_t*)gImage_1,150,150, 0, EPD_WHITE);
-		Paint_SelectImage((uint8_t*)gImage_1);
-		Paint_Clear(EPD_WHITE);
-		Paint_DrawBitMap(gImage_1);
-		EPD_4IN2_V2_PartialDisplay((uint8_t*)gImage_1,249,129,400,280);
-		taskEXIT_CRITICAL();
+{
+		uint8_t powe[]= {"AT+POWE0\r\n"};
+		uint8_t pwrm[]= {"AT+PWRM2\r\n"};
+		USART3_DMA_Send(powe,sizeof(powe));
+		vTaskDelay(5000);
+		USART3_DMA_Send(pwrm,sizeof(pwrm));
+	 if(xSemaphoreTake(xDisplayMutex, portMAX_DELAY ) == pdTRUE) 
+	 {
+			Paint_NewImage((uint8_t*)gImage_1,150,150, 0, EPD_WHITE);
+			Paint_SelectImage((uint8_t*)gImage_1);
+			Paint_Clear(EPD_WHITE);
+			Paint_DrawBitMap(gImage_1);
+			EPD_4IN2_V2_PartialDisplay((uint8_t*)gImage_1,249,129,400,280);
+			xSemaphoreGive(xDisplayMutex);
+	 }
 	while(1)
 	{
 		ButtonTask();

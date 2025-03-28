@@ -301,7 +301,7 @@ void EXTI15_10_IRQHandler(void)
   HAL_GPIO_EXTI_IRQHandler(KEY_OK_Pin);
   HAL_GPIO_EXTI_IRQHandler(T_SQW_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-//	USAR_EXTI11_IRQHandler();
+	
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 

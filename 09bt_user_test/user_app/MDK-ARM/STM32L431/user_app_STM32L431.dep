@@ -1,9 +1,9 @@
 Dependencies for Project 'user_app', Target 'STM32L431': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32l431xx.s)(0x67E554AA)(--cpu Cortex-M4.fp.sp -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ../Core/Inc-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32L431xx SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32l431xx.lst --xref -o stm32l431\startup_stm32l431xx.o --depend stm32l431\startup_stm32l431xx.d)
-F (..\HARDWARE\TEST\test.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\test.o --omf_browse stm32l431\test.crf --depend stm32l431\test.d)
+F (..\HARDWARE\TEST\test.c)(0x67E6287A)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\test.o --omf_browse stm32l431\test.crf --depend stm32l431\test.d)
 I (..\HARDWARE\TEST\test.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -45,9 +45,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -62,6 +59,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
 I (../HARDWARE/AHT20/aht20.h)(0x67E16FA8)
 I (../HARDWARE/DS3231/DS3231.h)(0x67E16FA8)
@@ -74,9 +74,9 @@ I (../HARDWARE/4PIN2EPD/Command/EPD_Command.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/GUI/GUI_Paint.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/GUI/../Fonts/fonts.h)(0x67E16FA8)
 I (../HARDWARE/Button/Button.h)(0x67E16FA8)
-F (..\Core\Src\pwr_from.c)(0x67E5512D)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\pwr_from.o --omf_browse stm32l431\pwr_from.crf --depend stm32l431\pwr_from.d)
-I (../Core/Inc/pwr_from.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+F (..\Core\Src\pwr_from.c)(0x67E64499)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\pwr_from.o --omf_browse stm32l431\pwr_from.crf --depend stm32l431\pwr_from.d)
+I (../Core/Inc/pwr_from.h)(0x67E62F7C)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -118,9 +118,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -135,6 +132,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
 I (../HARDWARE/AHT20/aht20.h)(0x67E16FA8)
 I (../HARDWARE/DS3231/DS3231.h)(0x67E16FA8)
@@ -156,7 +156,7 @@ I (../Calendar/calendar.h)(0x67E16FA8)
 I (../Calendar/date.h)(0x67E16FA8)
 F (..\Core\Src\SystemInfo.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\systeminfo.o --omf_browse stm32l431\systeminfo.crf --depend stm32l431\systeminfo.d)
 I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -198,9 +198,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -215,6 +212,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../HARDWARE/AHT20/aht20.h)(0x67E16FA8)
 I (../HARDWARE/DS3231/DS3231.h)(0x67E16FA8)
 I (../Core/Inc/rtc.h)(0x67E16FA8)
@@ -222,7 +222,7 @@ I (../Core/Inc/adc.h)(0x67E16FA8)
 F (..\Core\Inc\SystemInfo.h)(0x67E16FA8)()
 F (..\Core\Src\delay.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\delay.o --omf_browse stm32l431\delay.crf --depend stm32l431\delay.d)
 I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -264,100 +264,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
-F (..\Core\Src\sys.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\sys.o --omf_browse stm32l431\sys.crf --depend stm32l431\sys.d)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x67E0C532)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x67E0C532)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x67E0C532)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x67E0C515)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67E0C515)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67E0C532)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
-F (../Core/Src/main.c)(0x67E555AC)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\main.o --omf_browse stm32l431\main.crf --depend stm32l431\main.d)
-I (../Core/Inc/main.h)(0x67E16FA8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
-I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x67E0C532)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x67E0C532)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x67E0C532)
-I (../Drivers/CMSIS/Include/core_cm4.h)(0x67E0C515)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67E0C515)
-I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67E0C515)
-I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67E0C532)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
-I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
-I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -372,6 +278,128 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+F (..\Core\Src\sys.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\sys.o --omf_browse stm32l431\sys.crf --depend stm32l431\sys.d)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x67E0C532)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x67E0C532)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x67E0C532)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x67E0C515)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67E0C515)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67E0C532)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+F (../Core/Src/main.c)(0x67E62F7C)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\main.o --omf_browse stm32l431\main.crf --depend stm32l431\main.d)
+I (../Core/Inc/main.h)(0x67E62760)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x67E0C532)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x67E0C532)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l431xx.h)(0x67E0C532)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x67E0C515)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x67E0C515)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x67E0C515)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x67E0C532)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5E8E3CC2)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
+I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/adc.h)(0x67E16FA8)
 I (../Core/Inc/dma.h)(0x67E16FA8)
 I (../Core/Inc/rtc.h)(0x67E16FA8)
@@ -381,7 +409,7 @@ I (../Core/Inc/gpio.h)(0x67E16FA8)
 I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
 I (../HARDWARE/AHT20/aht20.h)(0x67E16FA8)
 I (../HARDWARE/DS3231/DS3231.h)(0x67E16FA8)
-I (../Core/Inc/pwr_from.h)(0x67E16FA8)
+I (../Core/Inc/pwr_from.h)(0x67E62F7C)
 I (../HARDWARE/ATcmd/ATcmd.h)(0x67E16FA8)
 I (../HARDWARE/W25QXX/w25qxx.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
@@ -395,7 +423,7 @@ I (../Calendar/calendar.h)(0x67E16FA8)
 I (../Calendar/date.h)(0x67E16FA8)
 F (../Core/Src/gpio.c)(0x67E554A4)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\gpio.o --omf_browse stm32l431\gpio.crf --depend stm32l431\gpio.d)
 I (../Core/Inc/gpio.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -437,6 +465,20 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
@@ -452,7 +494,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -492,17 +534,17 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (../Core/Src/adc.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\adc.o --omf_browse stm32l431\adc.crf --depend stm32l431\adc.d)
 I (../Core/Inc/adc.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -544,12 +586,26 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (../Core/Src/dma.c)(0x67E554A8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\dma.o --omf_browse stm32l431\dma.crf --depend stm32l431\dma.d)
 I (../Core/Inc/dma.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -591,12 +647,26 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (../Core/Src/rtc.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\rtc.o --omf_browse stm32l431\rtc.crf --depend stm32l431\rtc.d)
 I (../Core/Inc/rtc.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -638,12 +708,26 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (../Core/Src/spi.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\spi.o --omf_browse stm32l431\spi.crf --depend stm32l431\spi.d)
 I (../Core/Inc/spi.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -685,12 +769,26 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (../Core/Src/usart.c)(0x67E56235)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\usart.o --omf_browse stm32l431\usart.crf --depend stm32l431\usart.d)
 I (../Core/Inc/usart.h)(0x67E555EE)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -732,9 +830,7 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
@@ -742,15 +838,20 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../HARDWARE/W25QXX/w25qxx.h)(0x67E16FA8)
 I (../HARDWARE/ATcmd/ATcmd.h)(0x67E16FA8)
 I (../Core/Inc/bl.h)(0x67E35145)
-F (../Core/Src/stm32l4xx_it.c)(0x67E55B04)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\stm32l4xx_it.o --omf_browse stm32l431\stm32l4xx_it.crf --depend stm32l431\stm32l4xx_it.d)
-I (../Core/Inc/main.h)(0x67E16FA8)
+F (../Core/Src/stm32l4xx_it.c)(0x67E63CE7)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\stm32l4xx_it.o --omf_browse stm32l431\stm32l4xx_it.crf --depend stm32l431\stm32l4xx_it.d)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -792,28 +893,28 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/stm32l4xx_it.h)(0x67E554A8)
 I (../Core/Inc/usart.h)(0x67E555EE)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
-I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
-I (../Core/Inc/pwr_from.h)(0x67E16FA8)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/pwr_from.h)(0x67E62F7C)
 F (../Core/Src/stm32l4xx_hal_msp.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\stm32l4xx_hal_msp.o --omf_browse stm32l431\stm32l4xx_hal_msp.crf --depend stm32l431\stm32l4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -855,6 +956,20 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
@@ -898,7 +1013,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
 F (..\Core\Src\bl.c)(0x67E35145)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\bl.o --omf_browse stm32l431\bl.crf --depend stm32l431\bl.d)
 I (../Core/Inc/bl.h)(0x67E35145)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -940,6 +1055,20 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
@@ -1859,7 +1988,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h)(0x67E0C532)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h)(0x67E0C532)
 F (..\HARDWARE\AHT20\AHT20.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\aht20.o --omf_browse stm32l431\aht20.crf --depend stm32l431\aht20.d)
 I (..\HARDWARE\AHT20\aht20.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -1901,13 +2030,27 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (..\HARDWARE\AHT20\AHT20.h)(0x67E16FA8)()
 F (..\HARDWARE\W25QXX\W25QXX.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\w25qxx.o --omf_browse stm32l431\w25qxx.crf --depend stm32l431\w25qxx.d)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -1949,26 +2092,29 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/spi.h)(0x67E16FA8)
 I (../Core/Inc/usart.h)(0x67E555EE)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
-I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 F (..\HARDWARE\W25QXX\W25QXX.h)(0x67E16FA8)()
 F (..\HARDWARE\Button\Button.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\button.o --omf_browse stm32l431\button.crf --depend stm32l431\button.d)
 I (..\HARDWARE\Button\Button.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2010,9 +2156,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2027,10 +2170,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (..\HARDWARE\Button\Button.h)(0x67E16FA8)()
 F (..\HARDWARE\ATcmd\ATcmd.c)(0x67E3554B)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\atcmd.o --omf_browse stm32l431\atcmd.crf --depend stm32l431\atcmd.d)
 I (..\HARDWARE\ATcmd\ATcmd.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2072,9 +2218,7 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
@@ -2084,12 +2228,14 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
-I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
-I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+I (../Core/Inc/SystemInfo.h)(0x67E16FA8)
 I (../HARDWARE/AHT20/aht20.h)(0x67E16FA8)
 I (../HARDWARE/DS3231/DS3231.h)(0x67E16FA8)
 I (../Core/Inc/usart.h)(0x67E555EE)
@@ -2099,7 +2245,7 @@ I (../Core/Inc/bl.h)(0x67E35145)
 F (..\HARDWARE\ATcmd\ATcmd.h)(0x67E16FA8)()
 F (..\HARDWARE\DS3231\DS3231.c)(0x67E3674D)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\ds3231.o --omf_browse stm32l431\ds3231.crf --depend stm32l431\ds3231.d)
 I (..\HARDWARE\DS3231\DS3231.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2141,13 +2287,27 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (..\HARDWARE\DS3231\DS3231.h)(0x67E16FA8)()
 F (..\Drivers\MALLOC\malloc.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\malloc.o --omf_browse stm32l431\malloc.crf --depend stm32l431\malloc.d)
 I (..\Drivers\MALLOC\malloc.h)(0x67E2BE0C)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2189,13 +2349,27 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
+I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
 I (../Core/Inc/delay.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
 I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 F (..\Drivers\MALLOC\malloc.h)(0x67E2BE0C)()
-F (..\HARDWARE\4PIN2EPD\Config\DEV_Config.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\dev_config.o --omf_browse stm32l431\dev_config.crf --depend stm32l431\dev_config.d)
+F (..\HARDWARE\4PIN2EPD\Config\DEV_Config.c)(0x67E62790)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\dev_config.o --omf_browse stm32l431\dev_config.crf --depend stm32l431\dev_config.d)
 I (..\HARDWARE\4PIN2EPD\Config\DEV_Config.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2237,9 +2411,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2254,11 +2425,14 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Core/Inc/spi.h)(0x67E16FA8)
 F (..\HARDWARE\4PIN2EPD\GUI\GUI_Paint.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\gui_paint.o --omf_browse stm32l431\gui_paint.crf --depend stm32l431\gui_paint.d)
 I (..\HARDWARE\4PIN2EPD\GUI\GUI_Paint.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2300,9 +2474,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
-I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2317,6 +2488,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
 I (..\HARDWARE\4PIN2EPD\GUI\../Fonts/fonts.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/Config/Debug.h)(0x67E16FA8)
 I (../HARDWARE/W25QXX/w25qxx.h)(0x67E16FA8)
@@ -2335,7 +2509,7 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
 F (..\HARDWARE\4PIN2EPD\Command\EPD_Command.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\epd_command.o --omf_browse stm32l431\epd_command.crf --depend stm32l431\epd_command.d)
 I (..\HARDWARE\4PIN2EPD\Command\EPD_Command.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2377,9 +2551,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2394,10 +2565,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../HARDWARE/4PIN2EPD/Config/Debug.h)(0x67E16FA8)
 F (..\HARDWARE\GBKFont\gbkfont.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\gbkfont.o --omf_browse stm32l431\gbkfont.crf --depend stm32l431\gbkfont.d)
 I (..\HARDWARE\GBKFont\gbkfont.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2439,9 +2613,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2456,6 +2627,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Core/Inc/sys.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
 I (../HARDWARE/W25QXX/w25qxx.h)(0x67E16FA8)
 F (..\HARDWARE\GBKFont\gbkfont.h)(0x67E16FA8)()
 F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x67E0C516)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\croutine.o --omf_browse stm32l431\croutine.crf --depend stm32l431\croutine.d)
@@ -2602,10 +2776,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x67E0C516)
-F (..\Calendar\calendar.c)(0x67E16FA8)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\calendar.o --omf_browse stm32l431\calendar.crf --depend stm32l431\calendar.d)
+F (..\Calendar\calendar.c)(0x67E627F3)(--c99 -c --cpu Cortex-M4.fp.sp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/CMSIS/DSP/Include -I ../Drivers/MALLOC -I ../HARDWARE/AHT20 -I ../HARDWARE/DS3231 -I ../HARDWARE/W25QXX -I ../HARDWARE/Button -I ../HARDWARE/ATcmd -I ../HARDWARE/TEST -I ../HARDWARE/4PIN2EPD -I ../HARDWARE/4PIN2EPD/Config -I ../HARDWARE/4PIN2EPD/Fonts -I ../HARDWARE/4PIN2EPD/Command -I ../HARDWARE/4PIN2EPD/GUI -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../HARDWARE/GBKFont -I ../Calendar-I.\RTE\_STM32L431-ID:\mcu\pack\ARM\CMSIS\6.1.0\CMSIS\Core\Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVERUSE_HAL_DRIVER -DSTM32L431xx -D__TARGET_FPU_VFP -DARM_MATH_CM4 -D__CC_ARM -DUSE_HAL_DRIVER -DUSER_VECT_TAB_ADDRESS-o stm32l431\calendar.o --omf_browse stm32l431\calendar.crf --depend stm32l431\calendar.d)
 I (..\Calendar\calendar.h)(0x67E16FA8)
 I (../Core/Inc/sys.h)(0x67E16FA8)
-I (../Core/Inc/main.h)(0x67E16FA8)
+I (../Core/Inc/main.h)(0x67E62760)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x67E0C532)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x67E16FA8)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x67E0C532)
@@ -2647,10 +2821,6 @@ I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\string.h)(0x5E8E3CC2)
 I (D:\mcu\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5E8E3CC2)
-I (../Core/Inc/delay.h)(0x67E16FA8)
-I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
-I (../HARDWARE/4PIN2EPD/Command/EPD_Command.h)(0x67E16FA8)
-I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x67E0C516)
 I (../Core/Inc/FreeRTOSConfig.h)(0x67E16FA8)
@@ -2665,6 +2835,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x67E0C516)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x67E0C516)
+I (../Core/Inc/delay.h)(0x67E16FA8)
+I (../Drivers/MALLOC/malloc.h)(0x67E2BE0C)
+I (../HARDWARE/4PIN2EPD/Command/EPD_Command.h)(0x67E16FA8)
+I (../HARDWARE/4PIN2EPD/Config/DEV_Config.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/GUI/GUI_Paint.h)(0x67E16FA8)
 I (../HARDWARE/4PIN2EPD/GUI/../Fonts/fonts.h)(0x67E16FA8)
 I (..\Calendar\date.h)(0x67E16FA8)

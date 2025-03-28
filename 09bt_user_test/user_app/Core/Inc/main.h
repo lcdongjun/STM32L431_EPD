@@ -36,6 +36,7 @@ extern "C" {
 #include <string.h>
 #include <stdbool.h>
 //#include "arm_math.h"
+#include "cmsis_os.h"
 #include "delay.h"
 #include "sys.h"
 #include "malloc.h"	 
@@ -56,7 +57,7 @@ void SystemClock_Config(void);
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+extern SemaphoreHandle_t xDisplayMutex;
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

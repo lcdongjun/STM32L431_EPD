@@ -19,11 +19,16 @@
 
 void TimeDisplayTask(void *argument);
 
-uint8_t KEY_OK_Flage = 0;
+static uint8_t s_cont = 0;
+static uint16_t HiTpBat_flage = 0;
+static uint8_t KEY_OK_Flage = 0;
 
+// 全局互斥量和信号量
 SemaphoreHandle_t rtcAlarmASemaphore;
+SemaphoreHandle_t rtcAlarmASemaphore = NULL;
 TaskHandle_t RTC_AlarmATask_Handle;
 TaskHandle_t TimeDisplayTask_Handle;
+
 
 
 void AllInit()
@@ -54,88 +59,110 @@ void AllSleep()
 	W25QXX_PowerDown();
 }
 
-static uint8_t s_cont = 0;
+void InitOSResources(void)
+{
+    rtcAlarmASemaphore = xSemaphoreCreateBinary();
+}
+
+// 处理闹钟事件
+static void HandleAlarmEvent(void)
+{
+    AllInit();
+    printf("RTC_AlarmATask Run\r\n");
+    
+    HiTpBat_flage++;
+    Sync_time();
+    s_cont = SystemInfo.DT.second;
+    initCalendar(10, 70, 60, 10);
+
+    if (HiTpBat_flage >= 3) HiTp(278, 30);
+    if (HiTpBat_flage >= 5)
+		{
+        Bat(278, 100);
+        HiTpBat_flage = 0;
+    }
+
+    AllSleep();
+    HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+}
+
+// 处理按键事件
+static void HandleKeyEvent(void)
+{
+    AllInit();
+    printf("KEY_OK start\r\n");
+    vTaskResume(TimeDisplayTask_Handle);
+    vTaskDelay(pdMS_TO_TICKS(120000));
+    KEY_OK_Flage = 0;
+    printf("KEY_OK stop\r\n");
+    vTaskSuspend(TimeDisplayTask_Handle);
+		AllSleep();
+}
+
+// RTC闹钟任务
 void RTC_AlarmATask(void *argument)
 {
-		uint16_t HiTpBat_flage = 0;
+    Sync_time();
+    initCalendar(10, 70, 60, 10);
+    HiTp(278, 30);
+    Bat(280, 100);
+    xTaskCreate(TimeDisplayTask, "TimeDisplay", 256, NULL, 2, &TimeDisplayTask_Handle);
+    vTaskSuspend(TimeDisplayTask_Handle);
 		Sync_time();
-    initCalendar(10,70,60,10);
-		HiTp(278,30);
-		Bat(280,100);
-		Sync_time();
-		s_cont = SystemInfo.DT.second;
+    s_cont = SystemInfo.DT.second;
 		DS3231_SetSQW(SQW_1HZ);
-		taskENTER_CRITICAL();
-		xTaskCreate(TimeDisplayTask, "TimeDisplay", 256, NULL, 2, &TimeDisplayTask_Handle);
-		vTaskSuspend(TimeDisplayTask_Handle);
-		taskEXIT_CRITICAL();
     while (1)
-    {
-        if (xSemaphoreTake(rtcAlarmASemaphore, portMAX_DELAY) == pdTRUE && KEY_OK_Flage == 0)
-        {
-            AllInit();
-            printf("RTC_AlarmATask Run\r\n");
-						HiTpBat_flage++;
-						Sync_time();
-						s_cont = SystemInfo.DT.second;
-						initCalendar(10,70,60,10);
-						if(HiTpBat_flage>=3)
+		{
+        if (xSemaphoreTake(rtcAlarmASemaphore, portMAX_DELAY) == pdTRUE )
+				{
+            if (KEY_OK_Flage == 0 && s_cont == 60)
 						{
-							HiTp(278,30);
-						}
-						if(HiTpBat_flage>=5)
-						{
-							Bat(278,100);
-							HiTpBat_flage = 0;
-						}
-						AllSleep();
-            HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
-        }
-        else if (KEY_OK_Flage == 1)
-        {
-            AllInit();
-            printf("KEY_OK start\r\n");
-						
-            vTaskResume(TimeDisplayTask_Handle);
-            for (uint8_t i = 0; i <= 10; i++)
-            {
-                vTaskDelay(pdMS_TO_TICKS(12000));
+                HandleAlarmEvent();
             }
-            KEY_OK_Flage = 0;
-            printf("KEY_OK stop\r\n");
-            vTaskSuspend(TimeDisplayTask_Handle);
-        }
+						else if(KEY_OK_Flage == 0 && s_cont < 60)
+						{
+								HAL_PWREx_EnterSTOP2Mode(PWR_STOPENTRY_WFI);
+						}
+						else if(KEY_OK_Flage == 1)
+						{
+                HandleKeyEvent();
+            }
+				}
     }
 }
 
-
-
+// 时间显示任务
 void TimeDisplayTask(void *argument)
 {
-		vTaskDelay(pdMS_TO_TICKS(100));
+    vTaskDelay(pdMS_TO_TICKS(100));
     while (1)
-    {
-				Sync_time();
-				initCalendar(10,70,60,10);
+		{
+        Sync_time();
+				initCalendar(10, 70, 60, 10);
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
 
+// RTC闹钟中断
 void USAR_RTC_Alarm_IRQHandler()
 {
-		s_cont++;
-		if(s_cont>=60)
+    s_cont++;
+		BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+		xSemaphoreGiveFromISR(rtcAlarmASemaphore, &xHigherPriorityTaskWoken);
+		portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+    if (s_cont >= 61)
 		{
-			s_cont = 0;
-			BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-			xSemaphoreGiveFromISR(rtcAlarmASemaphore, &xHigherPriorityTaskWoken);
-		}
+        s_cont = 1;
+    }
 }
 
+// 按键中断
 void USAR_EXTI11_IRQHandler()
 {
     BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-    KEY_OK_Flage = 1; 
+    taskENTER_CRITICAL_FROM_ISR();
+    KEY_OK_Flage = 1;
+    taskEXIT_CRITICAL_FROM_ISR(xHigherPriorityTaskWoken);
     xSemaphoreGiveFromISR(rtcAlarmASemaphore, &xHigherPriorityTaskWoken);
     portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
